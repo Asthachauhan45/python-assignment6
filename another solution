@@ -1,0 +1,18 @@
+def visibleBottle(l):
+    t=1
+    #p=[list(set(l))[-1]]
+    if len(l)==len(set(l)):
+        #print(p)
+        return t
+    while 1:
+        k=[x for x in set(l) for i in range((l.count(x)-1)) if l.count(x)>1]
+        #p+=[list(set(k))[-1]]
+        if len(k)!=len(set(k)):
+            t+=1
+            l=k
+        else:
+            #print(p)
+            return t+1
+n=int(input())
+b=list(map(int,input().split()))
+print(visibleBottle(b))
